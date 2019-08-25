@@ -43,7 +43,7 @@ function Ball() {
             playing = false
             this.initialVelocity()
             this.initialPosition()
-            scorePlayer += 1
+            scoreAI += 1
             console.log('player lost, ', scorePlayer)
         }
 
@@ -51,7 +51,7 @@ function Ball() {
             playing = false
             this.initialVelocity()
             this.initialPosition()
-            scoreAI += 1
+            scorePlayer += 1
             console.log('ai lost, ', scoreAI)
         }
     }
