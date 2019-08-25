@@ -63,9 +63,10 @@ function Bar() {
 
     this.reflects = function(ball) {
         if (ball.x >= this.x && ball.x <= this.x + this.width && ball.y >= this.y && ball.y <= this.y + 100) {
-            let angleReflection = (ball.x - (this.x + this.width / 2)) * -0.05
+            let angleReflection = (ball.x - (this.x + this.width / 2)) * -0.05 // changes the horizontal speed of the ball depending on the position of the bar when it reflects the ball. Center = no change, right side = to the right
+            let speedGain = this.velocity * -0.1 // changes the horizontal speed of the ball depending on the speed of the bar on the time of the reflection. Bar still = no chamge, bar going to the right = to the right
             ball.velocityX = ball.velocityX * -1 * 1.1
-            ball.velocityY = (ball.velocityY + angleReflection) * 1.1
+            ball.velocityY = (ball.velocityY + angleReflection + speedGain) * 1.1
         }
     }
 }
